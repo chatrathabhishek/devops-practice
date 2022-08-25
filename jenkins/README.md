@@ -36,19 +36,19 @@
 5. Configure Environments
     - On the dashboard, click on ```Mange Jenkins```
     - Go to ```Global Tool Configuration```
-    - ![alt text](https://github.com/chatrathabhishek/devops-practice/tree/main/images/install_tools.png)
+    - ![alt text](https://github.com/chatrathabhishek/devops-practice/tree/main/images/install_tools.png?raw=true)
         Go to Maven and fill the required info and save.
 
 6. Create a job
     - Click on create new item.
     - Give a name and select Freestyle job.
     - Go to source management
-        ![alt text](https://github.com/chatrathabhishek/devops-practice/tree/main/images/source_mgmt.png)
+        ![alt text](https://github.com/chatrathabhishek/devops-practice/tree/main/images/source_mgmt.png?raw=true)
     - You should add your repo info and credentials as shown above. You can specify branch info if you doing a branch else just leave it as main
     - Scroll down to ```Additiona Behaviour``` and click on add and select ```Sparse Checkout paths```
-        ![alt text](https://github.com/chatrathabhishek/devops-practice/tree/main/images/addnl_behaviour.png)
+        ![alt text](https://github.com/chatrathabhishek/devops-practice/tree/main/images/addnl_behaviour.png?raw=true)
     - Scroll down to ```Build``` and click ```Add build step```
-        ![alt text](https://github.com/chatrathabhishek/devops-practice/tree/main/images/build.png)
+        ![alt text](https://github.com/chatrathabhishek/devops-practice/tree/main/images/build.png?raw=true)
     - Make sure to add the commands as shown above
     - Save
 
