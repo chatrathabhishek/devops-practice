@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d5aa4cac-ba0e-4565-b830-ab9ac83c691b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/.gradle/4.10/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/.gradle/4.10/fileContent/fileContent.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/.gradle/4.10/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/.gradle/4.10/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/.gradle/4.10/fileHashes/resourceHashesCache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/.gradle/4.10/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/.gradle/4.10/javaCompile/classAnalysis.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/.gradle/4.10/javaCompile/jarAnalysis.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/.gradle/4.10/javaCompile/javaCompile.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/.gradle/4.10/javaCompile/taskHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/.gradle/4.10/taskHistory/taskHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/.gradle/4.10/taskHistory/taskHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/build/classes/java/main/com/example/AppController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/build/classes/java/main/com/example/AppController$User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/build/classes/java/main/com/example/AppController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/build/classes/java/main/com/example/Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/build/classes/java/main/com/example/DatabaseConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/build/classes/java/test/AppTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/build/libs/bootcamp-java-mysql-project-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/build/reports/tests/test/classes/AppTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/build/reports/tests/test/css/base-style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/build/reports/tests/test/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/build/reports/tests/test/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/build/reports/tests/test/js/report.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/build/reports/tests/test/packages/default-package.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/build/resources/main/static/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/build/test-results/test/TEST-AppTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/build/test-results/test/binary/output.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/build/test-results/test/binary/output.bin.idx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/build/test-results/test/binary/results.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/build/tmp/bootJar/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/src/main/java/com/example/AppController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/src/main/java/com/example/Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/src/main/java/com/example/DatabaseConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/src/main/resources/static/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-mysql-app-demo/src/test/java/AppTest.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2DX9Mjg4AMALW6yqzEVi2LRoPIu" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/Users/ac185391/Self-learn/Devops/devops-practice/docker/java-mysql-demo"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d5aa4cac-ba0e-4565-b830-ab9ac83c691b" name="Changes" comment="" />
+      <created>1660834515517</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1660834515517</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
