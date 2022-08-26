@@ -5,13 +5,13 @@ def gv
 pipeline {
     agent any
     tools {
-        maven 'Maven'
+        maven 'Maven 3.8'
     }
     stages {
         stage("init") {
             steps {
                 script {
-                    gv = load "script.groovy"
+                    gv = load "jenkins/java-maven-app/Jenkinsfile-simple-pipeline/script.groovy"
                 }
             }
         }
