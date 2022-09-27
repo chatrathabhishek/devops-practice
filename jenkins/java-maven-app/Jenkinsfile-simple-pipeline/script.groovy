@@ -1,14 +1,13 @@
 def buildJar() {
     echo "building the application..."
-    sh 'mvn package'
+    sh 'mvn -f "jenkins/java-maven-app/" package'
 } 
 
 def buildImage() {
     echo "building the docker image..."
-    withCredentials([usernamePassword(credentialsId: 'docker-hub-repo', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
-        sh 'docker build -t nanajanashia/demo-app:jma-2.0 .'
-        sh "echo $PASS | docker login -u $USER --password-stdin"
-        sh 'docker push nanajanashia/demo-app:jma-2.0'
+    app = docker.build("sws-globalsre-cug01-qa/java-maven-app:2.0", "-f jenkins/java-maven-app/Dockerfile .")
+    docker.withRegistry('https://us.gcr.io', 'gcr:sws-globalsre-cug01-qa') {
+        app.push()
     }
 } 
 
