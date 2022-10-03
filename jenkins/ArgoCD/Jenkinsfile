@@ -1,0 +1,30 @@
+#!/usr/bin/env groovy
+
+def gv
+
+pipeline {
+    agent any
+    parameters {
+        choice(name: 'Argo_Package', choices: ['Argo CD', 'Argo Roll', 'All'], description: '')
+        booleanParam(name: 'executeTests', defaultValue: true, description: '')
+    }
+    stages {
+        stage("init") {
+            steps {
+                script {
+                   gv = load "script.groovy"
+                }
+            }
+        }
+    stage("Install Argo CD") {
+        steps {
+            if (parameters.Argo_Package == 'Argo CD')
+            {
+                echo "Installing ${params.Argo_Package}"
+                script {
+                    gv.installArgoCD()
+                }
+            }
+        }
+    }
+}

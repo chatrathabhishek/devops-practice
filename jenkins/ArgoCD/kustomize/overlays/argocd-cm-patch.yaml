@@ -1,0 +1,49 @@
+- op: replace
+  path: /data
+  value:
+    url: https://argocd-dev.gsre.ncr.com
+    users.anonymous.enabled: "false"
+    statusbadge.enabled: "true"
+    admin.enabled: "false"
+    exec.enabled: "true"
+    dex.config: |
+      connectors:
+      # GitHub OAuth
+        - type: github
+          id: github
+          name: GitHub
+          config:
+            clientID: $github.clientId
+            clientSecret: $github.clientSecret
+            orgs:
+              - name: ncr-swt-sre
+                teams:
+                  - gsre-admin
+                  - gsre-dev
+                  - gsre-contributors
+                  - swt-innovation
+                  - appsec-dev
+    repositories: |
+      - url: https://github.com/ncr-swt-sre/argocd-apps
+    repository.credentials: |
+      - url: https://github.com/ncr-swt-sre
+        passwordSecret:
+          name: argocd-secret
+          key: github.token
+        usernameSecret:
+          name: argocd-secret
+          key: github.username
+      - url: https://github.com/ncr-tech-content-dev
+        passwordSecret:
+          name: argocd-secret
+          key: github.ncr.tech.token
+        usernameSecret:
+          name: argocd-secret
+          key: github.ncr.tech.username
+      - url: https://github.com/ncr-swt-innovations
+        passwordSecret:
+          name: argocd-secret
+          key: github.token
+        usernameSecret:
+          name: argocd-secret
+          key: github.username
