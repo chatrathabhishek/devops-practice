@@ -1,0 +1,9 @@
+- op: replace
+  path: /metadata/name
+  value: managed-certs-43
+
+- op: replace
+  path: /spec/domains
+  value:
+    - ac-gke.actest.com
+    - argocd.actest.com

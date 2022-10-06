@@ -1,0 +1,22 @@
+---
+apiVersion: cloud.google.com/v1
+kind: BackendConfig
+metadata:
+  name: cloudarmor
+  namespace: istio-system
+spec:
+  securityPolicy:
+    name: "cloud-armor"
+  logging:
+    enable: true
+    sampleRate: 1.0
+  healthCheck:
+    checkIntervalSec: 10
+    timeoutSec: 5
+    healthyThreshold: 1
+    unhealthyThreshold: 5
+    type: HTTP
+    requestPath: /healthz/ready
+    port: 15021
+  sessionAffinity:
+    affinityType: "CLIENT_IP"

@@ -1,0 +1,29 @@
+#!/usr/bin/env groovy
+
+def gv
+
+pipeline {
+    agent any
+
+    environment{
+        projectKey = "sws-globalsre-cug01-qa"
+        cluster = ""
+    }
+    stages {
+        stage("init") {
+            steps {
+                script {
+                   gv = load "script.groovy"
+                }
+            }
+        }
+        stage("Install ASM") {
+            steps {
+                echo "Installing ${params.Argo_Package}"
+                script {
+                    gv.installArgoCD()
+                }
+            }
+        }
+    }
+}
