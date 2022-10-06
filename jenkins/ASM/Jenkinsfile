@@ -22,15 +22,14 @@ pipeline {
                     ls -al
                 """
                 script {
-                   gv = load "/jenkins/ASM/script.groovy"
+                   gv = load "script.groovy"
                 }
             }
         }
         stage("Install ASM") {
             steps {
-                echo "Installing ${params.Argo_Package}"
                 script {
-                    gv.installArgoCD()
+                    gv.installASM()
                 }
             }
         }
