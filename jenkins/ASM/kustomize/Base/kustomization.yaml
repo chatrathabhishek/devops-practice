@@ -1,0 +1,7 @@
+resources:
+  - backendconfig.yaml
+  - istio-health.yaml
+  - istio-ingressgateway-ingress.yaml
+  - istio-ingressgateway-gateway.yaml
+  - managed-certs.yaml
+  - frontendconfig.yaml
