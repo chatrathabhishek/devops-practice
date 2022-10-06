@@ -3,6 +3,7 @@ def installASM() {
     sh """
         gcloud container clusters get-credentials ac-gke --region us-central1 --project sws-globalsre-cug01-qa
         curl https://storage.googleapis.com/csm-artifacts/asm/asmcli_${params.asmMajor}.${params.asmMinor} > asmcli && chmod +x asmcli
+        rm -f -r asm
         mkdir asm
         MAJOR=${params.asmMajor} MINOR=${params.asmMinor} POINT=${params.asmPoint} REV=${params.asmRev} CONFIG_VER=2 ./asmcli install \
         --project_id ${params.projectKey} \
