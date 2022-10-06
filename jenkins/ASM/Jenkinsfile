@@ -15,8 +15,10 @@ pipeline {
     }
     stages {
         stage("init") {
-            sh 'pwd'
-            sh 'ls -al'
+            sh """
+                pwd
+                ls -al
+            """
             steps {
                 script {
                    gv = load "jenkins/ASM/script.groovy"
