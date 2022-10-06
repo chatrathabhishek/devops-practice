@@ -1,3 +1,5 @@
+#!/usr/bin/env groovy
+
 def gv
 
 pipeline {
@@ -15,12 +17,12 @@ pipeline {
                 }
             }
         }
-    }
-    stage("Install ASM") {
-        steps {
-            echo "Installing ${params.Argo_Package}"
-            script {
-                gv.installArgoCD()
+        stage("Install ASM") {
+            steps {
+                echo "Installing ${params.Argo_Package}"
+                script {
+                    gv.installArgoCD()
+                }
             }
         }
     }
