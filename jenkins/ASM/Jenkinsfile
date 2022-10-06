@@ -16,11 +16,6 @@ pipeline {
     stages {
         stage("init") {
             steps {
-                sh """
-                    cd jenkins
-                    cd ASM
-                    ls -al
-                """
                 script {
                    gv = load "script.groovy"
                 }
