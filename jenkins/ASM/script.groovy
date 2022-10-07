@@ -6,7 +6,7 @@ def installASM() {
         cd jenkins/ASM
         gcloud container clusters get-credentials ${params.cluster} --region ${params.region} --project ${params.projectKey}
         curl https://storage.googleapis.com/csm-artifacts/asm/asmcli_${params.asmMajor}.${params.asmMinor} > asmcli && chmod +x asmcli
-        if [[ -z "asm" ]]
+        if [[ ! -d "asm" ]]
         then
           mkdir asm
         fi
@@ -22,7 +22,6 @@ def installASM() {
         --option cloud-tracing \
         --option legacy-default-egressgateway \
         --option envoy-access-log \
-        --option multicluster \
         --option iap-operator \
         --custom_overlay kustomize/asm-base/asm-overlay-istio-svc.yaml \
         --custom_overlay kustomize/asm-base/asm-overlay-telemetry.yaml       
