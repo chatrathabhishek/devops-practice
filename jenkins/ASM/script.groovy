@@ -5,6 +5,7 @@ def installASM() {
         curl https://storage.googleapis.com/csm-artifacts/asm/asmcli_${params.asmMajor}.${params.asmMinor} > asmcli && chmod +x asmcli
         rm -f -r asm
         mkdir asm
+        ls
         MAJOR=${params.asmMajor} MINOR=${params.asmMinor} POINT=${params.asmPoint} REV=${params.asmRev} CONFIG_VER=2 ./asmcli install \
         --project_id ${params.projectKey} \
         --cluster_name ${params.cluster} \
