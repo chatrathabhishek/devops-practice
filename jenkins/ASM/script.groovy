@@ -1,10 +1,10 @@
 def installASM() {
     echo "Installing ASM..."
     sh """
+        cd jenkins/ASM
         gcloud container clusters get-credentials ac-gke --region us-central1 --project sws-globalsre-cug01-qa
         curl https://storage.googleapis.com/csm-artifacts/asm/asmcli_${params.asmMajor}.${params.asmMinor} > asmcli && chmod +x asmcli
-        rm -f -r asm
-        cd jenkins/ASM
+
         if [[ -z "asm" ]]
         then
           mkdir asm
