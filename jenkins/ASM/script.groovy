@@ -1,11 +1,13 @@
 def installASM() {
     echo "Installing ASM..."
     sh """
+        #!/bin/bash
+        curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-405.0.0-linux-x86_64.tar.gz;
+        tar -xvf google-cloud-cli-405.0.0-linux-x86_64.tar.gz -C /tmp/;
+        ./google-cloud-sdk/install.sh -q;
+        source /tmp/google-cloud-sdk/path.bash.inc;
+        gcloud config set project ${params.projectKey}
         cd jenkins/ASM
-        curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-405.0.0-linux-x86_64.tar.gz
-        tar -xf google-cloud-cli-405.0.0-linux-x86_64.tar.gz
-        ./google-cloud-sdk/install.sh
-        . ~/.bashrc
         export PATH=":/var/lib/jenkins/workspace/ASM/jenkins/ASM/bin:$PATH"
         gcloud components install kubectl
         gcloud container clusters get-credentials ac-gke --region us-central1 --project sws-globalsre-cug01-qa
