@@ -1,11 +1,11 @@
 def installASM() {
     echo "Installing ASM..."
     sh """
-        apt-get remove google-cloud-sdk -y
         cd jenkins/ASM
         curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-405.0.0-linux-x86_64.tar.gz
         tar -xf google-cloud-cli-405.0.0-linux-x86_64.tar.gz
         ./google-cloud-sdk/install.sh
+        source ~/.bashrc
         gcloud components install kubectl
         gcloud container clusters get-credentials ac-gke --region us-central1 --project sws-globalsre-cug01-qa
         curl https://storage.googleapis.com/csm-artifacts/asm/asmcli_${params.asmMajor}.${params.asmMinor} > asmcli && chmod +x asmcli
