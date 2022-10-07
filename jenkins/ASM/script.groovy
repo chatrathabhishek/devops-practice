@@ -2,6 +2,8 @@ def installASM() {
     echo "Installing ASM..."
     sh """
         gcloud config set project ${params.projectKey}
+        echo "Install kubectl"
+        brew install kubectl
         cd jenkins/ASM
         gcloud container clusters get-credentials ac-gke --region us-central1 --project sws-globalsre-cug01-qa
         curl https://storage.googleapis.com/csm-artifacts/asm/asmcli_${params.asmMajor}.${params.asmMinor} > asmcli && chmod +x asmcli
