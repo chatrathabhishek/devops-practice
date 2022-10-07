@@ -6,6 +6,7 @@ def installASM() {
         rm -f -r asm
         mkdir asm
         pwd
+        ls -al
         MAJOR=${params.asmMajor} MINOR=${params.asmMinor} POINT=${params.asmPoint} REV=${params.asmRev} CONFIG_VER=2 ./asmcli install \
         --project_id ${params.projectKey} \
         --cluster_name ${params.cluster} \
