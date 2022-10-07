@@ -8,6 +8,7 @@ def installASM() {
         if [[ -z "asm" ]]
         then
           mkdir asm
+        fi
         pwd
         ls -al
         MAJOR=${params.asmMajor} MINOR=${params.asmMinor} POINT=${params.asmPoint} REV=${params.asmRev} CONFIG_VER=2 ./asmcli install \
