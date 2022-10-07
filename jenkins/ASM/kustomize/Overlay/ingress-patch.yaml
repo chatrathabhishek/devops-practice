@@ -1,6 +1,6 @@
 - op: add
   path: /metadata/annotations/networking.gke.io~1managed-certificates
-  value: managed-certs-1, managed-certs-2
+  value: managed-certs-1
 
 - op: add
   path: /metadata/annotations/kubernetes.io~1ingress.global-static-ip-name
