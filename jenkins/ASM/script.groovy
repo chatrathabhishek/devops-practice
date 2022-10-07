@@ -1,9 +1,11 @@
 def installASM() {
     echo "Installing ASM..."
     sh '''
-        echo "Install kubectl"
-        curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-        install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+        // echo "Install kubectl"
+        // curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+        // install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+        // kubectl version --client
+        alias kubectl="/home/ac185391_ncr_com/google-cloud-sdk/bin/kubectl"
         kubectl version --client
         cd jenkins/ASM
         gcloud container clusters get-credentials ${params.cluster} --region ${params.region} --project ${params.projectKey}
