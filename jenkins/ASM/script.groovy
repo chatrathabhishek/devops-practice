@@ -1,6 +1,6 @@
 def installASM() {
     echo "Installing ASM..."
-    sh """
+    sh '''
         echo "Install kubectl"
         curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
         install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
@@ -28,15 +28,15 @@ def installASM() {
         --option iap-operator \
         --custom_overlay kustomize/asm-base/asm-overlay-istio-svc.yaml \
         --custom_overlay kustomize/asm-base/asm-overlay-telemetry.yaml       
-    """
+    '''
     kustomize = "kustomize/Overlay/"
-    sh """
+    sh '''
         echo "Installing cluster overlays!"
         kustomize build ${kustomize} | kubectl apply -f -
         echo "Installing certs!"
         ./gsreasmctl -cert ${params.projectKey} ${params.cluster} ${params.region} || CERT_RESULT=\$?
         echo "Finished installing certs!"
-    """
+    '''
 }
 
 return this
