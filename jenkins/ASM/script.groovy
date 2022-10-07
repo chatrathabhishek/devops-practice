@@ -1,6 +1,6 @@
 def installASM() {
     echo "Installing ASM..."
-    sh '''
+    sh """
         alias kubectl="/home/ac185391_ncr_com/google-cloud-sdk/bin/kubectl"
         kubectl version --client
         cd jenkins/ASM
@@ -26,7 +26,7 @@ def installASM() {
         --option iap-operator \
         --custom_overlay kustomize/asm-base/asm-overlay-istio-svc.yaml \
         --custom_overlay kustomize/asm-base/asm-overlay-telemetry.yaml       
-    '''
+    """
     kustomize = "kustomize/Overlay/"
     sh '''
         echo "Installing cluster overlays!"
