@@ -3,6 +3,7 @@ def installASM() {
     sh """
         gcloud config set project ${params.projectKey}
         echo "Install kubectl"
+        apt-get install build-essential procps curl file git
         brew install kubectl
         cd jenkins/ASM
         gcloud container clusters get-credentials ac-gke --region us-central1 --project sws-globalsre-cug01-qa
