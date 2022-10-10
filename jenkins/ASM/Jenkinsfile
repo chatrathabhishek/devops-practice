@@ -26,6 +26,14 @@ pipeline {
                 sh'echo "I am here"'
             }
         }
+
+        stage ("Generate Ingress Certificate"){
+            steps{
+                script{
+                    gv.generate_ingress_cert
+                }
+            }
+        }
         stage("Install ASM") {
             steps {
                 script {
