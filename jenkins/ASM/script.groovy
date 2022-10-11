@@ -4,6 +4,7 @@ def generate_ingress_cert() {
         export CA_CERT=${CA_CERT:-"istio-ca-secret"}
         export SECRET_NAME=${SECRET_NAME:-"ingress-gateway-cert"}
         export CERT_HOST=${CERT_HOST:-"${CLUSTER}"}
+        gcloud container clusters get-credentials ${params.cluster} --region ${params.region} --project ${params.projectKey}
         kubectl get secret ${CA_CERT} -n istio-system -o json | jq -r .data.\"ca-cert.pem\" | base64 --decode > ca-cert.pem
         kubectl get secret istio-ca-secret -n istio-system -o json | jq -r .data.\"ca-key.pem\" | base64 --decode > ca-key.pem
         openssl req -out cert.csr -newkey rsa:2048 -nodes -keyout cert.key -subj "/CN=${CERT_HOST}.${CERT_DOMAIN}/O=ac-test"
