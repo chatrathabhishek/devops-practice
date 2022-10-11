@@ -28,17 +28,17 @@ pipeline {
             }
         }
 
-        stage ("Generate Ingress Certificate"){
-            steps{
-                script{
-                    gv.generate_ingress_cert()
-                }
-            }
-        }
         stage("Install ASM") {
             steps {
                 script {
                     gv.installASM()
+                }
+            }
+        }
+        stage("Generate certificate") {
+            steps {
+                script {
+                    gv.generate_ingress_cert()
                 }
             }
         }
