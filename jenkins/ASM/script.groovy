@@ -1,4 +1,4 @@
-generate_ingress_cert() {
+def generate_ingress_cert() {
     sh '''
         export CERT_DOMAIN=${CERT_DOMAIN:-"svc.id.goog"}
         export CA_CERT=${CA_CERT:-"istio-ca-secret"}
