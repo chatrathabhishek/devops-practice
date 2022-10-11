@@ -1,9 +1,9 @@
 def generate_ingress_cert() {
-    sh '''
+    sh """
         export CERT_DOMAIN=${CERT_DOMAIN:-"svc.id.goog"}
         export CA_CERT=${CA_CERT:-"istio-ca-secret"}
         export SECRET_NAME=${SECRET_NAME:-"ingress-gateway-cert"}
-        export CERT_HOST=${CERT_HOST:-"${CLUSTER}"}
+        export CERT_HOST=${CERT_HOST:-"${param.CLUSTER}"}
         gcloud container clusters get-credentials ${params.cluster} --region ${params.region} --project ${params.projectKey}
         kubectl get secret ${CA_CERT} -n istio-system -o json | jq -r .data.\"ca-cert.pem\" | base64 --decode > ca-cert.pem
         kubectl get secret istio-ca-secret -n istio-system -o json | jq -r .data.\"ca-key.pem\" | base64 --decode > ca-key.pem
@@ -13,7 +13,7 @@ def generate_ingress_cert() {
         kubectl create -n istio-system secret tls ${SECRET_NAME} --key=cert.key --cert=cert.crt || KUBECTL_ERROR=$?
         #delete the files when finished
         rm *.pem *.crt *.csr *.key
-    '''
+    """
 }
 
 def installASM() {
