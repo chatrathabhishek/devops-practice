@@ -1,5 +1,5 @@
 generate_ingress_cert() {
-    sh """
+    sh '''
         export CERT_DOMAIN=${CERT_DOMAIN:-"svc.id.goog"}
         export CA_CERT=${CA_CERT:-"istio-ca-secret"}
         export SECRET_NAME=${SECRET_NAME:-"ingress-gateway-cert"}
@@ -11,7 +11,7 @@ generate_ingress_cert() {
         kubectl create -n istio-system secret tls ${SECRET_NAME} --key=cert.key --cert=cert.crt || KUBECTL_ERROR=$?
         #delete the files when finished
         rm *.pem *.crt *.csr *.key
-    """
+    '''
 }
 
 def installASM() {
