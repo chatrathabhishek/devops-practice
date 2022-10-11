@@ -30,7 +30,7 @@ pipeline {
         stage ("Generate Ingress Certificate"){
             steps{
                 script{
-                    gv.generate_ingress_cert
+                    gv.generate_ingress_cert()
                 }
             }
         }
