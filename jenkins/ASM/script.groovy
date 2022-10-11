@@ -6,7 +6,8 @@ def generate_ingress_cert() {
         export CERT_HOST=${CERT_HOST:-"${CLUSTER}"}
         kubectl get secret ${CA_CERT} -n istio-system -o json | jq -r .data.\"ca-cert.pem\" | base64 --decode > ca-cert.pem
         kubectl get secret istio-ca-secret -n istio-system -o json | jq -r .data.\"ca-key.pem\" | base64 --decode > ca-key.pem
-        openssl req -out cert.csr -newkey rsa:2048 -nodes -keyout cert.key -subj "/CN=${CERT_HOST}.${CERT_DOMAIN}/O=ncr"
+        openssl req -out cert.csr -newkey rsa:2048 -nodes -keyout cert.key -subj "/CN=${CERT_HOST}.${CERT_DOMAIN}/O=ac-test"
+        cat cert.csr
         openssl x509 -req -days 1825 -CA ca-cert.pem -CAkey ca-key.pem -set_serial 0 -in cert.csr -out cert.crt
         kubectl create -n istio-system secret tls ${SECRET_NAME} --key=cert.key --cert=cert.crt || KUBECTL_ERROR=$?
         #delete the files when finished
@@ -17,7 +18,7 @@ def generate_ingress_cert() {
 def installASM() {
     echo "Installing ASM..."
     sh """
-        alias kubectl=/home/ac185391_ncr_com/google-cloud-sdk/bin/kubectl
+        alias kubectl=/home/${params.hostname}/google-cloud-sdk/bin/kubectl
         kubectl version --client
         cd jenkins/ASM
         gcloud container clusters get-credentials ${params.cluster} --region ${params.region} --project ${params.projectKey}
