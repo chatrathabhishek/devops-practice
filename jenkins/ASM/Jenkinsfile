@@ -12,25 +12,33 @@ pipeline {
         string(name: 'asmMinor', description: 'ASM minor version')
         string(name: 'asmPoint', description: 'ASM point version')
         string(name: 'asmRev', description: 'ASM revision')
+        string(name: 'hostname', description: 'jenkins hostname')
     }
     stages {
         stage("init") {
             steps {
                 sh """
-                    cd jenkins
-                    cd ASM
+                    pwd
                     ls -al
                 """
                 script {
-                   gv = load "/jenkins/ASM/script.groovy"
+                   gv = load "jenkins/ASM/script.groovy"
+                }
+                sh'echo "I am here"'
+            }
+        }
+
+        stage("Install ASM") {
+            steps {
+                script {
+                    gv.installASM()
                 }
             }
         }
-        stage("Install ASM") {
+        stage("Generate certificate") {
             steps {
-                echo "Installing ${params.Argo_Package}"
                 script {
-                    gv.installArgoCD()
+                    gv.generate_ingress_cert()
                 }
             }
         }
