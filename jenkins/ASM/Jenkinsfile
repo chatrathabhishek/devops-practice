@@ -1,0 +1,46 @@
+#!/usr/bin/env groovy
+
+def gv
+
+pipeline {
+    agent any
+    parameters{
+        string(name: 'projectKey', description: 'gcp-project')
+        string(name: 'cluster', description: 'GKE-cluster')
+        string(name: 'region', description: 'Region')
+        string(name: 'asmMajor', description: 'ASM major version')
+        string(name: 'asmMinor', description: 'ASM minor version')
+        string(name: 'asmPoint', description: 'ASM point version')
+        string(name: 'asmRev', description: 'ASM revision')
+        string(name: 'hostname', description: 'jenkins hostname')
+    }
+    stages {
+        stage("init") {
+            steps {
+                sh """
+                    pwd
+                    ls -al
+                """
+                script {
+                   gv = load "jenkins/ASM/script.groovy"
+                }
+                sh'echo "I am here"'
+            }
+        }
+
+        stage("Install ASM") {
+            steps {
+                script {
+                    gv.installASM()
+                }
+            }
+        }
+        stage("Generate certificate") {
+            steps {
+                script {
+                    gv.generate_ingress_cert()
+                }
+            }
+        }
+    }
+}

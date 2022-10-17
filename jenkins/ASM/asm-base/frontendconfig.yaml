@@ -1,0 +1,11 @@
+---
+apiVersion: networking.gke.io/v1beta1
+kind: FrontendConfig
+metadata:
+  name: istio-ingress
+  namespace: istio-system
+spec:
+  sslPolicy: gke-ssl-policy
+  redirectToHttps:
+    enabled: true
+    responseCodeName: PERMANENT_REDIRECT

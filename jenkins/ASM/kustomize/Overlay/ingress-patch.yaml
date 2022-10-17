@@ -1,0 +1,21 @@
+- op: add
+  path: /metadata/annotations/networking.gke.io~1managed-certificates
+  value: managed-certs-1
+
+- op: add
+  path: /metadata/annotations/kubernetes.io~1ingress.global-static-ip-name
+  value: ac-test
+
+- op: replace
+  path: /spec/rules
+  value:
+    - host: "*.ac-test.com"
+      http:
+        paths:
+          - backend:
+              service:
+                name: istio-ingressgateway
+                port:
+                  number: 443
+            path: /*
+            pathType: ImplementationSpecific
