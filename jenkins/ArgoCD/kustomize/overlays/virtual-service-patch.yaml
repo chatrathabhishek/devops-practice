@@ -4,7 +4,7 @@
     gateways:
       - istio-system/ingressgateway
     hosts:
-      - "argocd-test.gsre.ncr.com"
+      - "argocd.actest.com"
     http:
       - route:
           - destination:

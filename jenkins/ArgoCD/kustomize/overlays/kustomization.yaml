@@ -1,7 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 bases:
-  - ../../../base
+  - ../../../ArgoCD/base
 namespace: argocd
 patches:
   - target:
@@ -21,8 +21,3 @@ patches:
       kind: ConfigMap
       name: argocd-cm
     path: argocd-cm-patch.yaml
-  - target:
-      version: v1
-      kind: ConfigMap
-      name: argocd-rbac-cm
-    path: argocd-rbac-cm-patch.yaml
