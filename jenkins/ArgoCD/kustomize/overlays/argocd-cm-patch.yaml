@@ -1,0 +1,26 @@
+- op: replace
+  path: /data
+  value:
+    url: https://argocd.actest.com
+    users.anonymous.enabled: "false"
+    statusbadge.enabled: "true"
+    admin.enabled: "false"
+    exec.enabled: "true"
+    dex.config: |
+      connectors:
+      # GitHub OAuth
+        - type: github
+          id: github
+          name: GitHub
+          config:
+            clientID: $github.clientId
+            clientSecret: $github.clientSecret
+    repositories: |
+      - url: https://github.com/chatrathabhishek/argocd-example-apps
+    repository.credentials: |
+      - passwordSecret:
+          name: argocd-secret
+          key: github.token
+        usernameSecret:
+          name: argocd-secret
+          key: github.username

@@ -1,0 +1,13 @@
+- op: replace
+  path: /spec
+  value:
+    gateways:
+      - istio-system/ingressgateway
+    hosts:
+      - "argocd.actest.com"
+    http:
+      - route:
+          - destination:
+              host: argocd-server
+              port:
+                number: 80

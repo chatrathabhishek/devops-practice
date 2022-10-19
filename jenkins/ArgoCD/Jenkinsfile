@@ -1,0 +1,45 @@
+#!/usr/bin/env groovy
+
+def gv
+
+pipeline {
+    agent any
+    parameters {
+        choice(name: 'Argo_Package', choices: ['Argo CD', 'Argo Roll', 'All'], description: '')
+        choice(name: 'Process', choices: ['Install', 'Uninstall'], description: '')
+        string(name: 'projectKey', description: 'gcp-project')
+        string(name: 'cluster', description: 'GKE-cluster')
+        string(name: 'region', description: 'Region')    
+    }
+    stages {
+        stage("init") {
+            steps {
+                script {
+                   gv = load "jenkins/ArgoCD/script.groovy"
+                }
+            }
+        }
+        stage("Install Argo CD") {
+            steps {
+                script {
+                    if (params.Argo_Package == 'Argo CD' && params.Process == 'Install')
+                    {
+                        echo "Installing ${params.Argo_Package}"
+                        gv.installArgoCD()
+                    }
+                }
+            }
+        }
+        stage("Uninstall Argo CD") {
+            steps {
+                script {
+                    if (params.Argo_Package == 'Argo CD' && params.Process == 'Uninstall')
+                    {
+                        echo "Installing ${params.Argo_Package}"
+                        gv.uninstallArgoCD()
+                    }
+                }
+            }
+        }
+    }
+}
