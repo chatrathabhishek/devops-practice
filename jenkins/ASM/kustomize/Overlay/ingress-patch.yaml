@@ -9,7 +9,7 @@
 - op: replace
   path: /spec/rules
   value:
-    - host: "*.ac-test.com"
+    - host: "*.actest.com"
       http:
         paths:
           - backend:
