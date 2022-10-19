@@ -14,6 +14,7 @@ def uninstallArgoCD() {
     echo "Uninstalling Argo..."
     sh """
         gcloud container clusters get-credentials ${params.cluster} --region ${params.region} --project ${params.projectKey}
+        cd jenkins/ArgoCD
         kustomize build kustomize/ | kubectl delete -f -
         kustomize build kustomize/overlays | kubectl delete -f -
     """
