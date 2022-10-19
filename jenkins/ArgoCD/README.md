@@ -25,5 +25,5 @@ This part of the repo is used to install ArgoCD with istio
     Edit the secret-store.yaml
     kubectl apply secret-store.yaml
 
-4. Add the values for argocd-github-client-id, argocd-github-client-secret, argocd-github-username, argocd-github-token and github-argocd-webhook
+4. Add the values for argocd-github-client-id, argocd-github-client-secret, argocd-github-username, argocd-github-token and github-argocd-webhook in secret manager
 5. Run the jenkins pipeline
