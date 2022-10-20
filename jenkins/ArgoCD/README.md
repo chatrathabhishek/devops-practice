@@ -12,12 +12,12 @@ This part of the repo is used to install ArgoCD with istio
     ```
     kubeclt create namespace external-secrets
     kubectl create serviceaccount kube-external-secrets --namespace external-secrets
-    gcloud iam service-accounts add-iam-policy-binding external-secret@sws-globalsre-cug01-qa.iam.gserviceaccount.com --role roles/iam.workloadIdentityUser --member "serviceAccount:sws-globalsre-cug01-qa.svc.id.goog[external-secrets/kube-external-secrets]"
+    gcloud iam service-accounts add-iam-policy-binding external-secret@<GCP_PROJECT>.iam.gserviceaccount.com --role roles/iam.workloadIdentityUser --member "serviceAccount:sws-globalsre-cug01-qa.svc.id.goog[external-secrets/kube-external-secrets]"
     ```
     - Install external secret using helm
     ```
     helm repo add external-secrets https://charts.external-secrets.io
-    helm install external-secrets external-secrets/external-secrets --set serviceAccount.annotations."iam\.gke\.io\/gcp-service-account"="external-secretst\@sws-globalsre-cug01-qa.iam.gserviceaccount.com"
+    helm install external-secrets external-secrets/external-secrets --set serviceAccount.annotations."iam\.gke\.io\/gcp-service-account"="external-secretst\@<GCP_PROJECT>.iam.gserviceaccount.com"
     ```
     - Create Secret store
     
