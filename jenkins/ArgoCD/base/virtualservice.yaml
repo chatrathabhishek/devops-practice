@@ -7,7 +7,7 @@ spec:
   gateways:
     - istio-system/ingressgateway
   hosts:
-    - argocd.actest.com
+    - "argocd.actest.dev"
   http:
     - match:
         - uri:
